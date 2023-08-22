@@ -1,10 +1,10 @@
 
 import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/home/Home'
 import Cart from './pages/Cart'
 import Profile from './pages/Profile'
 import Error from './pages/Error'
-import Login from './pages/Login'
+import Login from './pages/login/Login'
 import Register from './pages/Register'
 import Navbar from './components/Navbar'
 import { useContext } from 'react';
@@ -14,8 +14,10 @@ import { DarkModeContext } from './context/darkModeContext'
 function App() {
 
   const { currentUser } = useContext(AuthContext);
+  console.log(currentUser)
 
   const { darkMode } = useContext(DarkModeContext)
+
 
   const Layout = () => {
     return (
@@ -32,7 +34,7 @@ function App() {
   };
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
-      return <Navigate to="/login" />
+      return <Navigate to="/home" />
     }
   }
 
@@ -46,7 +48,7 @@ function App() {
       ),
       children: [
         {
-          path: "/",
+          path: "/home",
           element: <Home />
         },
         {
