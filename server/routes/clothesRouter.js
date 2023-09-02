@@ -3,7 +3,6 @@ const router = new Router()
 const clothesController = require('../controllers/clothesController')
 
 router.post('/',clothesController.create)
-router.get('/',clothesController.get)
 router.get('/',clothesController.getAll)
 router.delete('/',clothesController.delete)
 

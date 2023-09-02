@@ -16,11 +16,6 @@ class ClothesController {
             next(ApiError.badRequest(e.message))
         }
     }
-    async get(req, res, next) {
-        const { id } = req.params
-        const clothes = await Clothes.findAll({ where: { id: id } })
-        return res.json(clothes)
-    }
     async getAll(req, res) {
         const {brandId, typeId} = req.query
         let clothes;
