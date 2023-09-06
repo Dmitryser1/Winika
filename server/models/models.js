@@ -67,7 +67,7 @@ CartClothes.belongsTo(Clothes)
 Clothes.hasMany(Rating)
 Rating.belongsTo(Clothes)
 
-Clothes.hasMany(ClothesInfo)
+Clothes.hasMany(ClothesInfo, {as: 'info'})
 ClothesInfo.belongsTo(Clothes)
 
 Type.hasMany(Clothes)
