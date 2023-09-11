@@ -8,5 +8,4 @@ router.get('/:id', brandController.get)
 router.get('/', brandController.getAll)
 router.delete('/:id', brandController.delete)
 
-
 module.exports = router
